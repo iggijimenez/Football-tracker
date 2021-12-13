@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="text-align: center;">New Play</h1>
+
+<form action='/create_play' method='POST' class="make_play">
+    {{ form.csrf_token }}
+    <h5>Game Name:</h5>
+    {{ form.game }}
+
+    {% for error in form.game.name.errors %}
+    <p>{{error}}</p>
+    {% endfor %}
+
+    <h5>desc:</h5>
+    {{ form.desc }}
+
+    {% for error in form.model.errors %}
+    <p>{{error}}</p>
+    {% endfor %}
+
+    <h5>yards:</h5>
+    {{ form.yards }}
+
+    <br>
+    <br>
+    <br>
+    {{ form.submit }}
+</form>

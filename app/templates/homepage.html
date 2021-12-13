@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Games in our system:</h2>
+
+<div class="colordiv"></div>
+    <ul>
+        {% for play in all_plays %}
+        <li><a href="/play/{{ play.id }}">{{ play.desc }}</a>
+            <h6>Game played {{ play.game.name }}</h6>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

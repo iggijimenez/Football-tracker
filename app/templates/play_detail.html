@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="text-align: center;">New Game</h1>
+
+<form action='/create_game' method='POST' class="make_game">
+    {{ form.csrf_token }}
+    <h5>Game Name:</h5>
+    {{ form.name }}
+
+    {% for error in form.name.errors %}
+    <p>{{error}}</p>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    {{ form.submit }}
+</form>
+
+
+{% endblock %}
